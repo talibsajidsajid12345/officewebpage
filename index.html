@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Branch MSME DFO Srinagar | Programme Achievement Booklet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f5;
+            font-family: 'Inter', sans-serif;
+            color: #1a2c3e;
+            line-height: 1.5;
+            padding: 24px 16px;
+        }
+
+        /* main container */
+        .book-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        /* inner content */
+        .book-content {
+            padding: 32px 24px;
+        }
+
+        /* print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .book-container {
+                max-width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .book-content {
+                padding: 0.3in;
+            }
+            .hero-stats, .support-card, .summary-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* header hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .badge-gov {
+            display: inline-block;
+            background: #0b3b5f;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0a2942;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+        .subhead-main {
+            font-size: 1rem;
+            color: #2c5a7a;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        .officer-names {
+            background: #f8fafc;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 60px;
+            margin: 14px 0 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #15507b;
+            flex-wrap: wrap;
+        }
+        .date-period {
+            color: #5b6e8c;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        /* stats row */
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin: 28px 0 20px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #f0f6fa 0%, #ffffff 100%);
+            border-radius: 24px;
+            padding: 12px 18px;
+            min-width: 140px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #e0edf5;
+            flex: 1 0 auto;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1e6f5c;
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4a627a;
+        }
+
+        /* cards */
+        .insight-card {
+            background: #fefcf5;
+            border-left: 6px solid #c4452c;
+            padding: 18px 20px;
+            border-radius: 24px;
+            margin: 28px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .insight-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .support-card {
+            background: #eef3fc;
+            border-radius: 24px;
+            padding: 18px 20px;
+            margin: 24px 0;
+            border: 1px solid #cbdde9;
+        }
+
+        /* section titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 40px 0 16px 0;
+            padding-bottom: 6px;
+            border-bottom: 3px solid #c4452c;
+            display: inline-block;
+        }
+        .program-group {
+            margin: 32px 0 24px;
+        }
+        .program-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f5e7e;
+            margin: 18px 0 12px 0;
+            background: #f4f9fe;
+            padding: 6px 14px;
+            border-radius: 40px;
+            display: inline-block;
+        }
+        /* responsive tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0 20px;
+            border-radius: 20px;
+            border: 1px solid #e2edf5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            min-width: 500px;
+        }
+        th {
+            background: #1e466e;
+            color: white;
+            padding: 10px 8px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+        td {
+            border: 1px solid #dce5ec;
+            padding: 8px 6px;
+            vertical-align: top;
+            background-color: #ffffff;
+        }
+        .table-total {
+            background: #f1f5f9;
+            font-weight: 700;
+        }
+        .summary-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .summary-card {
+            background: #f8fafd;
+            flex: 1 1 140px;
+            border-radius: 24px;
+            padding: 16px 8px;
+            text-align: center;
+            border: 1px solid #e2edf7;
+        }
+        .big-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #c4452c;
+        }
+        .footer-note {
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #dce5ec;
+            padding-top: 28px;
+            font-size: 0.75rem;
+            color: #5a6f88;
+            word-break: break-word;
+        }
+        .footer-note a {
+            color: #1e6f5c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+        i.fa, i.far {
+            margin-right: 6px;
+            color: #c06854;
+        }
+        .inline-badge {
+            background: #e9ecef;
+            border-radius: 30px;
+            padding: 2px 10px;
+            font-size: 0.7rem;
+        }
+        /* responsive breakpoints */
+        @media (max-width: 680px) {
+            body {
+                padding: 12px;
+            }
+            .book-content {
+                padding: 20px 16px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .subhead-main {
+                font-size: 0.9rem;
+            }
+            .officer-names {
+                font-size: 0.8rem;
+                padding: 6px 14px;
+            }
+            .stat-card {
+                min-width: 120px;
+                padding: 8px 12px;
+            }
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .program-title {
+                font-size: 1rem;
+            }
+            .insight-card h3 {
+                font-size: 1.2rem;
+            }
+            .summary-card .big-number {
+                font-size: 1.5rem;
+            }
+            th, td {
+                padding: 6px 4px;
+                font-size: 0.7rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-stats {
+                gap: 10px;
+            }
+            .stat-card {
+                min-width: calc(50% - 10px);
+                flex: 1;
+            }
+            .summary-card {
+                flex: 1 1 100%;
+            }
+            .book-content {
+                padding: 16px 12px;
+            }
+            .insight-card, .support-card {
+                padding: 14px 16px;
+            }
+        }
+        .note-italic {
+            font-size: 0.75rem;
+            color: #4f6f8f;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="book-container">
+    <div class="book-content">
+
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <div class="badge-gov"><i class="fas fa-building"></i> MINISTRY OF MSME | GOVT. OF INDIA</div>
+            <h1>Programme Achievement Booklet</h1>
+            <div class="subhead-main">Branch MSME Development & Facilitation Office, Srinagar</div>
+            <div class="officer-names">
+                <i class="fas fa-user-tie"></i> Sh. Saheel Yaqoob Alaqband (SYA) &nbsp;|&nbsp; 
+                <i class="fas fa-chalkboard-user"></i> Sh. Mohammed Tariq Ishtiaq (MTI)
+            </div>
+            <div><i class="fas fa-users"></i> Supported by: <strong>Sh. Sajid Hussain Shah</strong>, Young Professional</div>
+            <div class="officer-names" style="margin-top: 6px;">
+                <i class="fas fa-chalkboard-user"></i> under guidance of Sh. Amit Kumar Tamaria <br> Joint Director, Head of Office (UTs J&K, Ladakh)
+            </div>
+            <div class="date-period"><i class="far fa-calendar-alt"></i> Reporting Period: 2025 – 2026</div>
+        </div>
+
+        <!-- KPI STATS ROW -->
+        <div class="hero-stats">
+            <div class="stat-card"><div class="stat-number">37</div><div class="stat-label">Total Programmes</div></div>
+            <div class="stat-card"><div class="stat-number">2,611+</div><div class="stat-label">Beneficiaries</div></div>
+            <div class="stat-card"><div class="stat-number">₹ 17.39 L</div><div class="stat-label">Total Expenditure</div></div>
+        </div>
+
+        <!-- FOREWORD + ACKNOWLEDGEMENT -->
+        <div class="insight-card">
+            <h3><i class="fas fa-book-open"></i> Foreword</h3>
+            <p>This booklet presents a comprehensive overview of skill development, awareness, and entrepreneurship programmes conducted by MSME DFO Srinagar. Spearheaded by <strong>Sh. Saheel Yaqoob Alaqband</strong> and <strong>Sh. Mohammed Tariq Ishtiaq</strong>, the branch empowered artisans, entrepreneurs, and youth across Kashmir under schemes including PM Vishwakarma, EAP, ESDP, and IPR initiatives.</p>
+        </div>
+        <div class="support-card">
+            <h3><i class="fas fa-handshake"></i> Acknowledgement</h3>
+            <p>The branch extends sincere gratitude to <strong>Sh. Sajid Hussain Shah</strong>, Young Professional, for his invaluable contribution in coordinating logistics, documentation, on-ground execution, and timely reporting. His commitment played a vital role in the successful implementation of these programmes.</p>
+        </div>
+
+        <!-- =============== SECTION SYA =============== -->
+        <div>
+            <div class="section-title"><i class="fas fa-chart-line"></i> Officer: Sh. Saheel Yaqoob Alaqband (SYA)</div>
+            <div class="summary-grid">
+                <div class="summary-card"><div class="big-number">22</div><div>Programmes</div></div>
+                <div class="summary-card"><div class="big-number">1,912+</div><div>Participants</div></div>
+                <div class="summary-card"><div class="big-number">₹ 13.34 L</div><div>Expenditure</div></div>
+            </div>
+
+            <!-- Programme 1: PMV Marketing -->
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-chalkboard"></i> PMV Marketing & Entrepreneurship Workshops</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>S.No</th><th>Venue</th><th>Date</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td>Meeting Hall, Arhama, Shopian</td><td>29.12.2025</td><td>160</td><td>37,183</td></tr>
+                            <tr><td>2</td><td>Kulgam / DC Office</td><td>18.12.2025</td><td>168</td><td>38,308</td></tr>
+                            <tr><td>3</td><td>Kupwara / Environmental Hall</td><td>21.01.2026</td><td>80</td><td>41,974</td></tr>
+                            <tr><td>4</td><td>Ganderbal / Animal Husbandry Hall</td><td>15.12.2026</td><td>90</td><td>23,882</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="4" style="text-align:right;"><strong>Total</strong></td><td><strong>₹ 1,41,374</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-bullhorn"></i> PM Vishwakarma Awareness</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>S.No</th><th>Venue</th><th>Date</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td>Kupwara / ACD Hall</td><td>17.11.2026</td><td>200</td><td>34,823</td></tr>
+                            <tr><td>2</td><td>Bandipora / DC Office</td><td>25.11.2025</td><td>140+</td><td>45,475</td></tr>
+                            <tr><td>3</td><td>Pulwama / Town Hall</td><td>19.11.2025</td><td>120</td><td>93,000</td></tr>
+                            <tr><td>4</td><td>Baramullah / DAK Bunglow</td><td>12.01.2026</td><td>100</td><td>33,057</td></tr>
+                            <tr><td>5</td><td>Anantnag / DAK Bunglow</td><td>15.01.2026</td><td>220</td><td>39,772</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="4" style="text-align:right;"><strong>Total</strong></td><td><strong>₹ 2,46,127</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-graduation-cap"></i> EAP (General)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>S.No</th><th>Venue</th><th>Date</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td>Dawar Gurez, Bandipora</td><td>26.08.2025</td><td>60</td><td>19,542</td></tr>
+                            <tr><td>2</td><td>IUST Aantipora, Pulwama</td><td>16.09.2025</td><td>65</td><td>16,067</td></tr>
+                            <tr><td>3</td><td>GDC Chariesharief, Budgam</td><td>18.09.2025</td><td>120</td><td>19,985</td></tr>
+                            <tr><td>4</td><td>Sonamarg Development Authority</td><td>13.10.2025</td><td>45</td><td>16,550</td></tr>
+                            <tr><td>5</td><td>Govt ITI Pampore</td><td>16.02.2026</td><td>65</td><td>8,888</td></tr>
+                            <tr><td>6</td><td>GDC Ganderbal</td><td>16.01.2026</td><td>65</td><td>10,867</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="4" style="text-align:right;"><strong>Total</strong></td><td><strong>₹ 91,899</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-tools"></i> ESDP (General)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>S.No</th><th>Venue</th><th>Duration</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td>Govt Polytechnic Nogam, Budgam</td><td>30.12.2026 – 13.02.2026</td><td>27</td><td>1,15,435</td></tr>
+                            <tr><td>2</td><td>IICT Nowshera, Srinagar</td><td>14.01.26 - 20.02.26</td><td>25</td><td>98,005</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="4" style="text-align:right;"><strong>Total</strong></td><td><strong>₹ 2,13,440</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-chart-simple"></i> MDP, VDP & IPR Programmes</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Programme</th><th>Venue</th><th>Date/Duration</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>MDP</td><td>CSIR-IIIM, Srinagar</td><td>29.09–06.10.2025</td><td>25</td><td>43,501</td></tr>
+                            <tr><td>MDP</td><td>Sonamarg Development Authority</td><td>14–18.10.2025</td><td>25</td><td>39,403</td></tr>
+                            <tr><td>VDP</td><td>SKICC Srinagar</td><td>03–04 Feb 2026</td><td>160</td><td>4,99,373</td></tr>
+                            <tr><td>IPR</td><td>CSIR-IIIM, Srinagar</td><td>13.11.2025</td><td>70</td><td>37,593</td></tr>
+                            <tr><td>IPR</td><td>UOK South Campus, Anantnag</td><td>09.12.2025</td><td>30</td><td>21,563</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="4" style="text-align:right;"><strong>Total (MDP+VDP+IPR)</strong></td><td><strong>₹ 6,41,433</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- =============== SECTION MTI =============== -->
+            <div class="section-title" style="margin-top: 48px;"><i class="fas fa-chart-line"></i> Officer: Sh. Mohammed Tariq Ishtiaq (MTI)</div>
+            <div class="summary-grid">
+                <div class="summary-card"><div class="big-number">15</div><div>Programmes</div></div>
+                <div class="summary-card"><div class="big-number">699+</div><div>Participants</div></div>
+                <div class="summary-card"><div class="big-number">₹ 4.05 L</div><div>Expenditure</div></div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-store"></i> PM Vishwakarma Fair (New Sanction)</div>
+                <p><i class="fas fa-ban" style="color:#c4452c;"></i> <strong>Status:</strong> Not Conducted</p>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-hand-holding-usd"></i> Meesho Collaboration Workshop</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Venue</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody><tr><td>PPDC Br. MSME DFO Srinagar</td><td>72</td><td>20,000</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-bullhorn"></i> PM Vishwakarma Awareness (MTI)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Venue</th><th>Date</th><th>Participants</th><th>Amount (₹)</th><th>Remarks</th></tr></thead>
+                        <tbody>
+                            <tr><td>DC Conference Hall, Shopian</td><td>23.02.2026</td><td>101</td><td>20,624</td><td>Advance returned</td></tr>
+                            <tr><td>DC Conference Hall, Budgam</td><td>17.02.2026</td><td>107</td><td>22,146</td><td>Advance returned</td></tr>
+                            <tr><td>DC Conference Hall, Kulgam</td><td>11.02.2026</td><td>108</td><td>22,928</td><td>Advance returned</td></tr>
+                            <tr><td>ITI Srinagar</td><td>18.02.2026</td><td>109</td><td>20,842</td><td>Advance returned</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="3" style="text-align:right;"><strong>Total</strong></td><td><strong>₹ 86,240</strong></td><td></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-graduation-cap"></i> EAP & ESDP (General)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Programme</th><th>Venue / Partner</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>EAP</td><td>JKRLM/DMMU Kulgam</td><td>63</td><td>11,361</td></tr>
+                            <tr><td>EAP</td><td>JKRLM/DMMU Anantnag</td><td>56</td><td>10,174</td></tr>
+                            <tr><td>EAP</td><td>JKRLM/DMMU Kupwara</td><td>68</td><td>11,328</td></tr>
+                            <tr><td>EAP</td><td>JKRLM/DMMU Baramulla</td><td>66</td><td>15,098</td></tr>
+                            <tr><td>ESDP</td><td>ITI Pulwama</td><td>25</td><td>71,868</td></tr>
+                            <tr><td>ESDP</td><td>Oxbridge Computer Inst. Zainapora</td><td>27</td><td>92,473</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="2" style="text-align:right;"><strong>Total EAP+ESDP</strong></td><td><strong>305</strong></td><td><strong>₹ 2,12,302</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="program-group">
+                <div class="program-title"><i class="fas fa-chalkboard-user"></i> MDP & IPR (MTI)</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Programme</th><th>Venue</th><th>Participants</th><th>Amount (₹)</th></tr></thead>
+                        <tbody>
+                            <tr><td>MDP</td><td>CIED-IUST Awantipora</td><td>25</td><td>39,443</td></tr>
+                            <tr><td>IPR</td><td>DIC Kupwara – Townhall</td><td>70+</td><td>26,588</td></tr>
+                            <tr><td>IPR</td><td>DC Conference Hall, Bandipore</td><td>82</td><td>21,068</td></tr>
+                        </tbody>
+                        <tfoot><tr class="table-total"><td colspan="2" style="text-align:right;"><strong>Total</strong></td><td><strong>177+</strong></td><td><strong>₹ 87,099</strong></td></tr></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CONSOLIDATED + ACHIEVEMENTS -->
+            <div class="section-title"><i class="fas fa-chart-pie"></i> Consolidated Performance</div>
+            <div class="summary-grid" style="margin-top: 8px;">
+                <div class="summary-card"><div class="big-number">37</div><div>Total Programmes</div></div>
+                <div class="summary-card"><div class="big-number">2,611+</div><div>Total Participants</div></div>
+                <div class="summary-card"><div class="big-number">₹ 17,39,914</div><div>Total Expenditure</div></div>
+            </div>
+            <div class="table-wrapper">
+                <table style="margin-bottom: 20px;">
+                    <thead><tr><th>Particulars</th><th>Sh. Saheel Yaqoob Alaqband (SYA)</th><th>Sh. Mohammed Tariq Ishtiaq (MTI)</th><th>Total</th></tr></thead>
+                    <tbody>
+                        <tr><td>Programmes</td><td>22</td><td>15</td><td><strong>37</strong></td></tr>
+                        <tr><td>Participants</td><td>1,912+</td><td>699+</td><td><strong>2,611+</strong></td></tr>
+                        <tr><td>Expenditure (₹)</td><td>13,34,273</td><td>4,05,641</td><td><strong>17,39,914</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="insight-card">
+                <h3><i class="fas fa-trophy"></i> Key Achievements</h3>
+                <ul style="margin-left: 20px; margin-top: 6px;">
+                    <li><strong>Highest Participation:</strong> 220 participants – PM Vishwakarma Awareness at Anantnag (SYA)</li>
+                    <li><strong>Highest Expenditure:</strong> ₹ 4,99,373 – VDP at SKICC Srinagar (SYA)</li>
+                    <li><strong>Outreach:</strong> Over 2,600 beneficiaries across Kashmir Valley</li>
+                    <li><strong>Diverse Categories:</strong> Awareness, Skill Development, Management, IPR, Marketing, Vendor Development</li>
+                </ul>
+            </div>
+
+            <div class="support-card" style="background: #fef5e8;">
+                <h3><i class="fas fa-heart"></i> Closing Note</h3>
+                <p>The programmes conducted by <strong>Sh. Saheel Yaqoob Alaqband</strong> and <strong>Sh. Mohammed Tariq Ishtiaq</strong> under the guidance of <strong>Sh. Amit Kumar Tamaria, Joint Director & Head of Office (UTs J&K, Ladakh)</strong> have empowered thousands of entrepreneurs, artisans, and students. The branch acknowledges the dedicated support of <strong>Sh. Sajid Hussain Shah</strong>, Young Professional, for his coordination and execution efforts that made these milestones possible.</p>
+                <p style="margin-top: 12px;">We look forward to continuing this momentum in the coming years.</p>
+            </div>
+
+            <div class="footer-note">
+                <i class="fas fa-print"></i> Branch MSME Development & Facilitation Office, Srinagar, J&K — March 2026<br>
+                <span>Compiled from official programme records and expenditure statements | Design: Sh. Sajid Hussain Shah, Young Professional, Br MSME DFO Srinagar</span><br>
+                <a href="https://www.linkedin.com/in/sajidhussainshah7051887747/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> Sajid Hussain Shah - LinkedIn Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+```
